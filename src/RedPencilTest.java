@@ -51,6 +51,34 @@ public class RedPencilTest {
     }
 
     @Test
+    public void whenThePriceIsReducedByLargerPriceThanCurrentPricePromotionDoesNotBegin()
+    {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(5.01);
+
+        //Assert
+        Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(5.00, item.getPrice(), 0);
+    }
+
+    @Test
+    public void whenThePriceIsReducedByEqualPriceToCurrentPricePromotionDoesNotBegin()
+    {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(5.00);
+
+        //Assert
+        Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(5.00, item.getPrice(), 0);
+    }
+
+    @Test
     public void whenPriceIsReducedBy5Point2PercentThePromotionBegins(){
         //Arrange
         Item item = new Item("Coat", 5.00);
@@ -134,7 +162,6 @@ public class RedPencilTest {
         LocalDate testCurrentDate = LocalDate.of(2015, 12, 31);
         item.setupTestDates(testBeginDate, testCurrentDate);
 
-
         //Assert
         Assert.assertEquals("Coat", item.toString());
     }
@@ -142,7 +169,6 @@ public class RedPencilTest {
     @Test
     public void whenPromotionDateIs30DaysOldPromotionTextDisplays() {
         //Arrange
-
         Item item = new Item("Coat", 5.00);
 
         //Act
@@ -150,7 +176,6 @@ public class RedPencilTest {
         LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
         LocalDate testCurrentDate = LocalDate.of(2015, 12, 30);
         item.setupTestDates(testBeginDate, testCurrentDate);
-
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());

@@ -30,11 +30,13 @@ public class Item {
 
     public void reducePrice(double price) {
 
-        if (price >= (this.price * 0.05) && (price <= this.price * 0.3)) {
-            this.beginPromotion();
+        if (price < this.price) {
+            if (price >= (this.price * 0.05) && (price <= this.price * 0.3)) {
+                this.beginPromotion();
+            }
+            this.price -= price;
         }
 
-        this.price -= price;
     }
 
     public LocalDate getCurrentDate() {

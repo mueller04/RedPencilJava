@@ -35,12 +35,11 @@
       <file leaf-file-name="RedPencilTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37238494">
-              <caret line="142" column="65" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="65" />
+            <state vertical-scroll-proportion="4.647887">
+              <caret line="170" column="17" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
-                <element signature="method#whenPriceIsReducedBy5Point2PercentThePromotionBegins#0;class#RedPencilTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -60,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/Item.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#419#420#0" expanded="true" />
@@ -496,27 +495,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 42m 57s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 44m 43s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 44m 57s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 46m 32s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 47m 19s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 48m 20s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 16h 49m 14s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedPencilTest - 2016.01.14 at 16h 52m 00s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
@@ -524,6 +502,27 @@
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RedPencilTest - 2016.01.14 at 17h 03m 07s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 10m 37s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 10m 56s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 12m 23s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 17m 44s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 19m 32s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 20m 10s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 17h 21m 20s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -546,7 +545,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37064677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4353234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -560,7 +559,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -596,7 +595,7 @@
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#419#420#0" expanded="true" />
@@ -609,12 +608,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37238494">
-          <caret line="142" column="65" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="65" />
+        <state vertical-scroll-proportion="4.647887">
+          <caret line="170" column="17" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
-            <element signature="method#whenPriceIsReducedBy5Point2PercentThePromotionBegins#0;class#RedPencilTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
