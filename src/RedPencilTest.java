@@ -63,7 +63,7 @@ public class RedPencilTest {
         item.reducePrice(0.26);
 
         //Assert
-        Assert.assertEquals(4.74, item.getPrice());
+        Assert.assertEquals(4.74, item.getPrice(), 0);
     }
 
 }

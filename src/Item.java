@@ -8,6 +8,10 @@ public class Item {
         this.price = price;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
     public void beginPromotion(){
         this.displayText = displayText + " " + "(promotion)";
     }
