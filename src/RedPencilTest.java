@@ -12,6 +12,7 @@ import java.util.GregorianCalendar;
 
 public class RedPencilTest {
 
+
     @Test
     public void whenanItemisMarkedAsAPromotionItReturnsPromotionInTheString(){
         //Arrange
@@ -138,5 +139,21 @@ public class RedPencilTest {
         Assert.assertEquals("Coat", item.toString());
     }
 
+    @Test
+    public void whenPromotionDateIs30DaysOldPromotionTextDisplays() {
+        //Arrange
+
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(1.20);
+        LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
+        LocalDate testCurrentDate = LocalDate.of(2015, 12, 30);
+        item.setupTestDates(testBeginDate, testCurrentDate);
+
+
+        //Assert
+        Assert.assertEquals("Coat (promotion)", item.toString());
+    }
+
 }
-//ChronoUnit.DAYS.between(date1, date2);
