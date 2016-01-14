@@ -18,7 +18,7 @@ public class Item {
 
     public void reducePrice(double price) {
 
-        if (price >= (this.price * 0.05)){
+        if (price >= (this.price * 0.05) && (price <= this.price * 0.3)){
             this.beginPromotion();
         }
 

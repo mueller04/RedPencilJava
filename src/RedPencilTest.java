@@ -43,7 +43,7 @@ public class RedPencilTest {
     }
 
     @Test
-    public void whenPriceIsReducedBy5Point4PercentThePromotionBegins(){
+    public void whenPriceIsReducedBy5Point2PercentThePromotionBegins(){
         //Arrange
         Item item = new Item("Coat", 5.00);
 
@@ -64,6 +64,30 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals(4.74, item.getPrice(), 0);
+    }
+
+    @Test
+    public void whenPriceIsReducedBy30PercentThePromotionBegins(){
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(1.50);
+
+        //Assert
+        Assert.assertEquals("Coat (promotion)", item.toString());
+    }
+
+    @Test
+    public void whenPriceIsReducedBy30Point1PercentThePromotionDoesNotBegin(){
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(1.55);
+
+        //Assert
+        Assert.assertEquals("Coat", item.toString());
     }
 
 }
