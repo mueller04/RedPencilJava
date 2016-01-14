@@ -112,4 +112,18 @@ public class RedPencilTest {
         Assert.assertEquals(expectedDate, item.getDate());
     }
 
+    @Test
+    public void whenNoPromotionTheDateIsNotRecorded(){
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(1.55);
+
+        //Assert
+
+        //ChronoUnit.DAYS.between(date1, date2);
+        Assert.assertEquals(null, item.getDate());
+    }
+
 }

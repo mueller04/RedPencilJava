@@ -35,8 +35,8 @@
       <file leaf-file-name="RedPencilTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3410042">
-              <caret line="100" column="53" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.87447697">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Program.java" />
-        <option value="$PROJECT_DIR$/src/RedPencilTest.java" />
         <option value="$PROJECT_DIR$/src/Item.java" />
+        <option value="$PROJECT_DIR$/src/RedPencilTest.java" />
       </list>
     </option>
   </component>
@@ -463,15 +463,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedPencilTest - 2016.01.14 at 12h 44m 27s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 12h 52m 34s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 12h 54m 50s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedPencilTest - 2016.01.14 at 13h 00m 17s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
@@ -493,10 +484,19 @@
     <history-entry file="RedPencilTest - 2016.01.14 at 15h 32m 05s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 15h 34m 00s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 15h 34m 29s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.14 at 15h 34m 55s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -513,7 +513,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37064677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37064677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -570,8 +570,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3410042">
-          <caret line="100" column="53" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.87447697">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
