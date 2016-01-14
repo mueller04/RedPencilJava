@@ -17,7 +17,8 @@ public class RedPencilTest {
         Assert.assertEquals("Coat (promotion)", item.toString());
     }
 
-    @Test public void whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin(){
+    @Test
+    public void whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin(){
         //Arrange
         Item item = new Item("Coat", 5.00);
 
@@ -28,6 +29,19 @@ public class RedPencilTest {
         Assert.assertEquals("Coat", item.toString());
     }
 
-    
+    @Test
+    public void whenThePriceIsReducedBy5PercentThePromotionBegins()
+    {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(0.25);
+
+        //Assert
+        Assert.assertEquals("Coat (promotion)", item.toString());
+    }
+
+
 
 }

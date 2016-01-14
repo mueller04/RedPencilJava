@@ -13,6 +13,11 @@ public class Item {
     }
 
     public void reducePrice(double price) {
+
+        if (price >= (this.price * 0.05)){
+            this.beginPromotion();
+        }
+
         this.price -= price;
     }
 
