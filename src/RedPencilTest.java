@@ -107,8 +107,6 @@ public class RedPencilTest {
         item.reducePrice(1);
 
         //Assert
-
-        //ChronoUnit.DAYS.between(date1, date2);
         Assert.assertEquals(expectedDate, item.getDate());
     }
 
@@ -121,9 +119,24 @@ public class RedPencilTest {
         item.reducePrice(1.55);
 
         //Assert
-
-        //ChronoUnit.DAYS.between(date1, date2);
         Assert.assertEquals(null, item.getDate());
     }
 
+    @Test
+    public void whenPromotionDateis31DaysOldNoPromotionText() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+
+        //Act
+        item.reducePrice(1.55);
+        LocalDate testDate = LocalDate.of(2015, 12, 30);
+        LocalDate testBeginDate = LocalDate.of(2015, 11, 31);
+        item.setTestPromotionBeginDate(testBeginDate);
+        item.setTestCurrentDate(testDate);
+
+        //Assert
+        Assert.assertEquals("Coat", item.toString());
+    }
+
 }
+//ChronoUnit.DAYS.between(date1, date2);
