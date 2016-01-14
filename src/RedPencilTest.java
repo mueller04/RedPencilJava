@@ -1,6 +1,13 @@
-import org.junit.Test.*;
-import org.junit.Assert.*;
 import org.junit.*;
+import sun.util.resources.en.CalendarData_en;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalField;
+import java.time.temporal.TemporalUnit;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class RedPencilTest {
@@ -88,6 +95,21 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
+    }
+
+    @Test
+    public void whenAPromotionBeginsTheDateIsRecorded(){
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        LocalDate expectedDate = LocalDate.now();
+
+        //Act
+        item.reducePrice(1);
+
+        //Assert
+
+        //ChronoUnit.DAYS.between(date1, date2);
+        Assert.assertEquals(expectedDate, item.getDate());
     }
 
 }

@@ -1,7 +1,11 @@
+import java.time.LocalDate;
+import java.util.Calendar;
+
 public class Item {
 
     public String displayText;
     public Double price;
+    public LocalDate date;
 
     public Item(String displayText, double price){
         this.displayText = displayText;
@@ -12,8 +16,13 @@ public class Item {
         return price;
     }
 
+    public LocalDate getDate(){
+        return date;
+    }
+
     public void beginPromotion(){
         this.displayText = displayText + " " + "(promotion)";
+        date = LocalDate.now();
     }
 
     public void reducePrice(double price) {
