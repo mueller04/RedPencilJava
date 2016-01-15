@@ -8,6 +8,7 @@ public class Item {
     public String promotionText = "";
     public Double price;
     public LocalDate date;
+    public boolean isPromotion = false;
 
     public Item(String itemText, double price) {
         this.itemText = itemText;
@@ -22,8 +23,13 @@ public class Item {
         return date;
     }
 
+    public boolean getPromotion() {
+        return isPromotion;
+    }
+
     public void beginPromotion() {
         promotionText = " (promotion)";
+        isPromotion = true;
         date = LocalDate.now();
     }
 
@@ -44,7 +50,7 @@ public class Item {
 
         if (date != null) {
             if (ChronoUnit.DAYS.between(date, now) > 30) {
-                promotionText = "";
+                isPromotion = false;
             }
 
         }

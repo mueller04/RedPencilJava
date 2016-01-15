@@ -23,6 +23,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals(true, item.getPromotion());
     }
 
     @Test
@@ -48,6 +49,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals(true, item.getPromotion());
     }
 
     @Test
@@ -61,6 +63,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(false, item.getPromotion());
         Assert.assertEquals(5.00, item.getPrice(), 0);
     }
 
@@ -75,6 +78,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(false, item.getPromotion());
         Assert.assertEquals(5.00, item.getPrice(), 0);
     }
 
@@ -88,6 +92,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals(true, item.getPromotion());
     }
 
     @Test
@@ -112,6 +117,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals(true, item.getPromotion());
     }
 
     @Test
@@ -124,6 +130,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(false, item.getPromotion());
     }
 
     @Test
@@ -162,11 +169,9 @@ public class RedPencilTest {
         item.reducePrice(1.55);
         item.setupTestDates(beginPromoDate);
 
-
-
-
         //Assert
         Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(false, item.getPromotion());
     }
 
     @Test
@@ -178,13 +183,11 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.20);
-        //LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
-        //LocalDate testCurrentDate = LocalDate.of(2015, 12, 30);
-
         item.setupTestDates(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals(true, item.getPromotion());
     }
 
 }
