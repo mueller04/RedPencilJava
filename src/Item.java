@@ -8,7 +8,6 @@ public class Item {
     public String promotionText = "";
     public Double price;
     public LocalDate date;
-    public LocalDate testCurrentDate;
 
     public Item(String itemText, double price) {
         this.itemText = itemText;
@@ -39,20 +38,12 @@ public class Item {
 
     }
 
-    public LocalDate getCurrentDate() {
-        if (testCurrentDate != null) {
-            return testCurrentDate;
-        } else {
-            return LocalDate.now();
-        }
-    }
-
     @Override
     public String toString(){
-        LocalDate currentDate = getCurrentDate();
+        LocalDate now = LocalDate.now();
 
         if (date != null) {
-            if (ChronoUnit.DAYS.between(date, currentDate) > 30) {
+            if (ChronoUnit.DAYS.between(date, now) > 30) {
                 promotionText = "";
             }
 
@@ -61,8 +52,7 @@ public class Item {
     }
 
     //Test Methods
-    public void setupTestDates(LocalDate testBeginDate, LocalDate testCurrentDate) {
+    public void setupTestDates(LocalDate testBeginDate) {
         this.date = testBeginDate;
-        this.testCurrentDate = testCurrentDate;
     }
 }

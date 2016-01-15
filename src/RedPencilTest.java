@@ -155,12 +155,15 @@ public class RedPencilTest {
     public void whenPromotionDateIs31DaysOldNoPromotionText() {
         //Arrange
         Item item = new Item("Coat", 5.00);
+        LocalDate now = LocalDate.now();
+        LocalDate beginPromoDate = now.minusDays(31);
 
         //Act
         item.reducePrice(1.55);
-        LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
-        LocalDate testCurrentDate = LocalDate.of(2015, 12, 31);
-        item.setupTestDates(testBeginDate, testCurrentDate);
+        item.setupTestDates(beginPromoDate);
+
+
+
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -170,12 +173,15 @@ public class RedPencilTest {
     public void whenPromotionDateIs30DaysOldPromotionTextDisplays() {
         //Arrange
         Item item = new Item("Coat", 5.00);
+        LocalDate now = LocalDate.now();
+        LocalDate beginPromoDate = now.minusDays(30);
 
         //Act
         item.reducePrice(1.20);
-        LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
-        LocalDate testCurrentDate = LocalDate.of(2015, 12, 30);
-        item.setupTestDates(testBeginDate, testCurrentDate);
+        //LocalDate testBeginDate = LocalDate.of(2015, 11, 30);
+        //LocalDate testCurrentDate = LocalDate.of(2015, 12, 30);
+
+        item.setupTestDates(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
