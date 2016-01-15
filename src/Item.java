@@ -40,8 +40,7 @@ public class Item {
         this.price += price;
         LocalDate now = LocalDate.now();
         lastPriceChangeDate = now;
-        promotion.expirePromotion(promotion);
-
+        Promotion.expirePromotion(promotion);
     }
 
     public boolean priceIsChangedLessThan30DaysAgo() {
