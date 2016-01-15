@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedPencilTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RedPencilTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.22535211">
+              <caret line="282" column="82" selection-start-line="282" selection-start-column="16" selection-end-line="282" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
@@ -93,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6830986">
-              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#370#371#0" expanded="true" />
@@ -135,9 +135,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Program.java" />
-        <option value="$PROJECT_DIR$/src/RedPencilTest.java" />
         <option value="$PROJECT_DIR$/src/Promotion.java" />
         <option value="$PROJECT_DIR$/src/Item.java" />
+        <option value="$PROJECT_DIR$/src/RedPencilTest.java" />
       </list>
     </option>
   </component>
@@ -601,15 +601,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedPencilTest - 2016.01.15 at 14h 07m 34s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.15 at 14h 08m 53s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.15 at 14h 12m 42s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedPencilTest - 2016.01.15 at 14h 15m 01s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
@@ -629,6 +620,15 @@
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RedPencilTest - 2016.01.15 at 14h 43m 38s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.15 at 14h 57m 51s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.15 at 14h 58m 00s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.15 at 14h 58m 14s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -714,17 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Promotion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -743,12 +732,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6830986">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#370#371#0" expanded="true" />
             <element signature="e#398#399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22535211">
+          <caret line="282" column="82" selection-start-line="282" selection-start-column="16" selection-end-line="282" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
