@@ -19,7 +19,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.beginPromotion();
+        item.beginPromotion(1.00);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -167,7 +167,7 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.55);
-        item.setupTestDates(beginPromoDate);
+        item.setupTestDates(beginPromoDate, null);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -183,7 +183,7 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.20);
-        item.setupTestDates(beginPromoDate);
+        item.setupTestDates(beginPromoDate, null);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -191,7 +191,7 @@ public class RedPencilTest {
     }
 
     @Test
-    public void whenPriceChangedWithin15DaysCannotCreateAnotherPromotion() {
+    public void whenPriceChangedWithin15DaysCannotChangePrice() {
         //Arrange
         Item item = new Item("Coat", 5.00);
         LocalDate now = LocalDate.now();
@@ -202,11 +202,24 @@ public class RedPencilTest {
         //Act
         item.reducePrice(1.20);
 
+        //Assert
+        Assert.assertEquals(5.00, item.getPrice(), 0);
+    }
+
+    @Test
+    public void whenPriceChangedWithin15DaysCannotUpdatePromoDate() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        LocalDate now = LocalDate.now();
+        LocalDate beginPromoDate = now.minusDays(30);
+        LocalDate lastPriceChangeDate = now.minusDays(15);
+        item.setupTestDates(beginPromoDate, lastPriceChangeDate);
+
+        //Act
+        item.reducePrice(1.20);
 
         //Assert
-        Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
-        Assert.assertEquals(5.00, item.getPrice(), 0);
+        Assert.assertEquals(beginPromoDate, item.getDate());
     }
 
 }

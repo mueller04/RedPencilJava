@@ -8,6 +8,7 @@ public class Item {
     public String promotionText = "";
     public Double price;
     public LocalDate date;
+    public LocalDate lastPriceChangeDate = null;
     public boolean isPromotion = false;
 
     public Item(String itemText, double price) {
@@ -27,21 +28,34 @@ public class Item {
         return isPromotion;
     }
 
-    public void beginPromotion() {
+    public void beginPromotion(Double price) {
         promotionText = " (promotion)";
         isPromotion = true;
+        this.price -= price;
         date = LocalDate.now();
+        lastPriceChangeDate = date;
     }
 
     public void reducePrice(double price) {
 
         if (price < this.price) {
             if (price >= (this.price * 0.05) && (price <= this.price * 0.3)) {
-                this.beginPromotion();
+                if (!priceIsChangedWithin30Days()) {
+                        this.beginPromotion(price);
+                }
             }
-            this.price -= price;
         }
+    }
 
+    public boolean priceIsChangedWithin30Days() {
+        if (lastPriceChangeDate != null) {
+            if (ChronoUnit.DAYS.between(lastPriceChangeDate, date) <= 30) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -58,7 +72,8 @@ public class Item {
     }
 
     //Test Methods
-    public void setupTestDates(LocalDate testBeginDate) {
+    public void setupTestDates(LocalDate testBeginDate, LocalDate testLastPriceChangeDate) {
         this.date = testBeginDate;
+        this.lastPriceChangeDate = testLastPriceChangeDate;
     }
 }
