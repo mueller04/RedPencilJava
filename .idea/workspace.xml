@@ -35,12 +35,22 @@
       <file leaf-file-name="RedPencilTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64788735">
-              <caret line="246" column="67" selection-start-line="246" selection-start-column="16" selection-end-line="246" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.35420743">
+              <caret line="280" column="56" selection-start-line="280" selection-start-column="16" selection-end-line="280" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrameworkMethod.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.777778">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,17 +69,17 @@
         <entry file="file://$PROJECT_DIR$/src/Item.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#532#533#0" expanded="true" />
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#596#597#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#1845#1846#0" expanded="true" />
-                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#574#575#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+                <element signature="e#2085#2086#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -212,69 +222,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RedPencilTest.whenanItemisMarkedAsAPromotionItReturnsPromotionInTheString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="RedPencilJava" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
-      <option name="METHOD_NAME" value="whenanItemisMarkedAsAPromotionItReturnsPromotionInTheString" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="RedPencilTest.whenPromotionDateIs30DaysOldPromotionTextDisplays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="RedPencilJava" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
-      <option name="METHOD_NAME" value="whenPromotionDateIs30DaysOldPromotionTextDisplays" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="RedPencilTest.whenPriceIsReducedBy5Point2PercentThePromotionBegins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="RedPencilJava" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
-      <option name="METHOD_NAME" value="whenPriceIsReducedBy5Point2PercentThePromotionBegins" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="RedPencilJava" />
@@ -283,6 +230,69 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
       <option name="METHOD_NAME" value="when31DaysSinceLastPriceChangeCanCreateNewPromotion" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RedPencilTest.whenPriceIsReducedDuringPromotionThePromotionIsNotProlonged" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="RedPencilJava" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
+      <option name="METHOD_NAME" value="whenPriceIsReducedDuringPromotionThePromotionIsNotProlonged" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RedPencilTest.whenPriceChangedWithin15DaysAndNoCurrentPromotionThenCannotBeginPromotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="RedPencilJava" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
+      <option name="METHOD_NAME" value="whenPriceChangedWithin15DaysAndNoCurrentPromotionThenCannotBeginPromotion" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="RedPencilJava" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RedPencilTest" />
+      <option name="METHOD_NAME" value="when30DaysSinceLastPriceChangeCanCreateNewPromotion" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -542,18 +552,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.RedPencilTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenanItemisMarkedAsAPromotionItReturnsPromotionInTheString" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPromotionDateIs30DaysOldPromotionTextDisplays" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceIsReducedBy5Point2PercentThePromotionBegins" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceIsReducedDuringPromotionThePromotionIsNotProlonged" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceChangedWithin15DaysAndNoCurrentPromotionThenCannotBeginPromotion" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.RedPencilTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceIsReducedBy5Point2PercentThePromotionBegins" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPromotionDateIs30DaysOldPromotionTextDisplays" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenanItemisMarkedAsAPromotionItReturnsPromotionInTheString" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceChangedWithin15DaysAndNoCurrentPromotionThenCannotBeginPromotion" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RedPencilTest.whenPriceIsReducedDuringPromotionThePromotionIsNotProlonged" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" />
       </list>
     </recent_temporary>
   </component>
@@ -568,35 +578,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 20m 26s.xml">
+    <history-entry file="RedPencilTest - 2016.01.15 at 11h 04m 47s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 20m 50s.xml">
+    <history-entry file="RedPencilTest - 2016.01.15 at 11h 04m 50s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 21m 10s.xml">
+    <history-entry file="RedPencilTest - 2016.01.15 at 11h 07m 05s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 22m 27s.xml">
+    <history-entry file="RedPencilTest - 2016.01.15 at 11h 14m 30s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 42m 42s.xml">
+    <history-entry file="RedPencilTest - 2016.01.15 at 11h 21m 13s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 42m 46s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
+    <history-entry file="RedPencilTest_when30DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.15 at 11h 14m 22s.xml">
+      <configuration name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 45m 01s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
+    <history-entry file="RedPencilTest_when30DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.15 at 11h 17m 51s.xml">
+      <configuration name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest - 2016.01.14 at 23h 45m 31s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
+    <history-entry file="RedPencilTest_when30DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.15 at 11h 18m 40s.xml">
+      <configuration name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest_when31DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.14 at 23h 42m 25s.xml">
-      <configuration name="RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
+    <history-entry file="RedPencilTest_when30DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.15 at 11h 19m 08s.xml">
+      <configuration name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RedPencilTest_when31DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.14 at 23h 44m 55s.xml">
-      <configuration name="RedPencilTest.when31DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
+    <history-entry file="RedPencilTest_when30DaysSinceLastPriceChangeCanCreateNewPromotion - 2016.01.15 at 11h 20m 31s.xml">
+      <configuration name="RedPencilTest.when30DaysSinceLastPriceChangeCanCreateNewPromotion" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -605,7 +615,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -614,16 +624,16 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4353234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4353234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -632,7 +642,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -665,28 +675,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.777778">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#1845#1846#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RedPencilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64788735">
-          <caret line="246" column="67" selection-start-line="246" selection-start-column="16" selection-end-line="246" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.35420743">
+          <caret line="280" column="56" selection-start-line="280" selection-start-column="16" selection-end-line="280" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#whenThePriceIsReducedBy4Point99PercentThePromotionDoesNotBegin#0;class#RedPencilTest#0" expanded="false" />

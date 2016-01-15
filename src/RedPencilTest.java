@@ -1,13 +1,6 @@
 import org.junit.*;
-import sun.util.resources.en.CalendarData_en;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalField;
-import java.time.temporal.TemporalUnit;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 
 public class RedPencilTest {
@@ -19,7 +12,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.beginPromotion(1.00);
+        item.beginPromotion();
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -143,7 +136,7 @@ public class RedPencilTest {
         item.reducePrice(1);
 
         //Assert
-        Assert.assertEquals(expectedDate, item.getDate());
+        Assert.assertEquals(expectedDate, item.getPromotionBeginDate());
     }
 
     @Test
@@ -155,7 +148,7 @@ public class RedPencilTest {
         item.reducePrice(1.55);
 
         //Assert
-        Assert.assertEquals(null, item.getDate());
+        Assert.assertEquals(null, item.getPromotionBeginDate());
     }
 
     @Test
@@ -191,21 +184,21 @@ public class RedPencilTest {
     }
 
     @Test
-    public void whenPriceChangedWithin15DaysCannotChangePrice() {
+    public void whenPriceChangedWithin15DaysAndNoCurrentPromotionThenCannotBeginPromotion() {
         //Arrange
         Item item = new Item("Coat", 5.00);
         LocalDate now = LocalDate.now();
-        LocalDate beginPromoDate = now.minusDays(30);
         LocalDate lastPriceChangeDate = now.minusDays(15);
 
-        item.setBeginDateForTest(beginPromoDate);
         item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
         item.reducePrice(1.20);
 
         //Assert
-        Assert.assertEquals(5.00, item.getPrice(), 0);
+        Assert.assertEquals(3.8, item.getPrice(), 0);
+        Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(false, item.getPromotion());
     }
 
     @Test
@@ -223,7 +216,8 @@ public class RedPencilTest {
         item.reducePrice(1.20);
 
         //Assert
-        Assert.assertEquals(beginPromoDate, item.getDate());
+        Assert.assertEquals(beginPromoDate, item.getPromotionBeginDate());
+        Assert.assertEquals(3.8, item.getPrice(), 0);
     }
 
     @Test
@@ -240,7 +234,7 @@ public class RedPencilTest {
         //Assert
         Assert.assertEquals(true, item.getPromotion());
         Assert.assertEquals(3.80, item.getPrice(), 0);
-        Assert.assertEquals(now, item.getDate());
+        Assert.assertEquals(now, item.getPromotionBeginDate());
     }
 
     @Test
@@ -257,7 +251,46 @@ public class RedPencilTest {
         //Assert
         Assert.assertEquals(true, item.getPromotion());
         Assert.assertEquals(3.80, item.getPrice(), 0);
-        Assert.assertEquals(now, item.getDate());
+        Assert.assertEquals(now, item.getPromotionBeginDate());
+    }
+
+   @Test
+   public void whenPriceIsReducedDuringPromotionThePromotionIsNotProlonged() {
+       //Arrange
+       Item item = new Item("Coat", 5.00);
+       Double priceToReduceIsValidToBeginPromotion = 1.20;
+
+       item.reducePrice(priceToReduceIsValidToBeginPromotion);
+
+       LocalDate now = LocalDate.now();
+       LocalDate beginPromoDate = now.minusDays(15);;
+       item.setBeginDateForTest(beginPromoDate);
+       item.setLastPriceChangeDate(beginPromoDate);
+
+       //Act
+       priceToReduceIsValidToBeginPromotion = .25;
+       item.reducePrice(priceToReduceIsValidToBeginPromotion);
+
+       //Assert
+       Assert.assertEquals(true, item.getPromotion());
+       Assert.assertEquals(3.55, item.getPrice(), 0);
+       Assert.assertEquals(beginPromoDate, item.getPromotionBeginDate());
+   }
+
+    @Test
+    public void whenPriceIsIncreasedCurrentPromotionEnds() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        Double priceToReduceIsValidToBeginPromotion = 1.20;
+        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        Assert.assertEquals(true, item.getPromotion());
+
+        //Act
+        item.increasePrice(.02);
+
+        //Assert
+        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals("Coat (promotion)", item.toString());
     }
 
 }
