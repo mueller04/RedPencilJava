@@ -26,6 +26,13 @@ public class Item {
                         promotion.beginPromotion();
                 }
             }
+
+            if (promotion != null) {
+                if (price > this.price * 0.3) {
+                    promotion.endPromotion();
+                }
+            }
+
             this.price -= price;
             LocalDate now = LocalDate.now();
             lastPriceChangeDate = now;

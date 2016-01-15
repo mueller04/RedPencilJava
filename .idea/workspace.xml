@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/Promotion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#259#260#0" expanded="true" />
@@ -97,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/src/Item.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#370#371#0" expanded="true" />
@@ -136,8 +136,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/Program.java" />
         <option value="$PROJECT_DIR$/src/Promotion.java" />
-        <option value="$PROJECT_DIR$/src/Item.java" />
         <option value="$PROJECT_DIR$/src/RedPencilTest.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
       </list>
     </option>
   </component>
@@ -601,9 +601,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedPencilTest - 2016.01.15 at 14h 15m 01s.xml">
-      <configuration name="RedPencilTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedPencilTest - 2016.01.15 at 14h 15m 44s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
@@ -629,6 +626,9 @@
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RedPencilTest - 2016.01.15 at 14h 58m 14s.xml">
+      <configuration name="RedPencilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedPencilTest - 2016.01.15 at 15h 04m 23s.xml">
       <configuration name="RedPencilTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -717,7 +717,7 @@
     <entry file="file://$PROJECT_DIR$/src/Promotion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#259#260#0" expanded="true" />
@@ -733,7 +733,7 @@
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#370#371#0" expanded="true" />
