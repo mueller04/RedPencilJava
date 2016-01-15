@@ -301,9 +301,11 @@ public class RedPencilTest {
 
 
 
-
-
     /*general questions - without a data store I feel this application is a weird state machine.  I can't think of how to "expire"
-    a promotion after 30 days other than to do so when a method is called actively so it checks the current date, in my case the tostring method.*/
+    a promotion after 30 days other than to do so when a method is called actively so it checks the current date, in my case the toString method.
+
+    should the expirePromotion be changed to a static method just so that you call it like Promotion.expirepromotion(promotion) ?
+
+    */
 
 }

@@ -27,12 +27,9 @@ public class Item {
                 }
             }
 
-            if (promotion != null) {
-                if (price > this.price * 0.3) {
-                    promotion.endPromotion();
-                }
+            if (price > this.price * 0.3) {
+                Promotion.expirePromotion(promotion);
             }
-
             this.price -= price;
             LocalDate now = LocalDate.now();
             lastPriceChangeDate = now;
@@ -43,10 +40,8 @@ public class Item {
         this.price += price;
         LocalDate now = LocalDate.now();
         lastPriceChangeDate = now;
+        promotion.expirePromotion(promotion);
 
-        if (promotion != null) {
-            promotion.endPromotion();
-        }
     }
 
     public boolean priceIsChangedLessThan30DaysAgo() {
