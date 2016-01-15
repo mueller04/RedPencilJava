@@ -48,7 +48,7 @@ public class Item {
     }
 
     public boolean priceIsChangedWithin30Days() {
-        if (lastPriceChangeDate != null) {
+        if (lastPriceChangeDate != null && date != null) {
             if (ChronoUnit.DAYS.between(lastPriceChangeDate, date) <= 30) {
                 return true;
             } else {
@@ -72,8 +72,11 @@ public class Item {
     }
 
     //Test Methods
-    public void setupTestDates(LocalDate testBeginDate, LocalDate testLastPriceChangeDate) {
+    public void setBeginDateForTest(LocalDate testBeginDate) {
         this.date = testBeginDate;
+    }
+
+    public void setLastPriceChangeDate(LocalDate testLastPriceChangeDate) {
         this.lastPriceChangeDate = testLastPriceChangeDate;
     }
 }

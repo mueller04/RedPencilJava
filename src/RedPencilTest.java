@@ -167,7 +167,7 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.55);
-        item.setupTestDates(beginPromoDate, null);
+        item.setBeginDateForTest(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -183,7 +183,7 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.20);
-        item.setupTestDates(beginPromoDate, null);
+        item.setBeginDateForTest(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -197,7 +197,9 @@ public class RedPencilTest {
         LocalDate now = LocalDate.now();
         LocalDate beginPromoDate = now.minusDays(30);
         LocalDate lastPriceChangeDate = now.minusDays(15);
-        item.setupTestDates(beginPromoDate, lastPriceChangeDate);
+
+        item.setBeginDateForTest(beginPromoDate);
+        item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
         item.reducePrice(1.20);
@@ -213,13 +215,49 @@ public class RedPencilTest {
         LocalDate now = LocalDate.now();
         LocalDate beginPromoDate = now.minusDays(30);
         LocalDate lastPriceChangeDate = now.minusDays(15);
-        item.setupTestDates(beginPromoDate, lastPriceChangeDate);
+
+        item.setBeginDateForTest(beginPromoDate);
+        item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
         item.reducePrice(1.20);
 
         //Assert
         Assert.assertEquals(beginPromoDate, item.getDate());
+    }
+
+    @Test
+    public void when31DaysSinceLastPriceChangeCanCreateNewPromotion() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        LocalDate now = LocalDate.now();
+        LocalDate lastPriceChangeDate = now.minusDays(31);
+        item.setLastPriceChangeDate(lastPriceChangeDate);
+
+        //Act
+        item.reducePrice(1.20);
+
+        //Assert
+        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(3.80, item.getPrice(), 0);
+        Assert.assertEquals(now, item.getDate());
+    }
+
+    @Test
+    public void when30DaysSinceLastPriceChangeCanCreateNewPromotion() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        LocalDate now = LocalDate.now();
+        LocalDate lastPriceChangeDate = now.minusDays(30);
+        item.setLastPriceChangeDate(lastPriceChangeDate);
+
+        //Act
+        item.reducePrice(1.20);
+
+        //Assert
+        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(3.80, item.getPrice(), 0);
+        Assert.assertEquals(now, item.getDate());
     }
 
 }
