@@ -48,6 +48,13 @@ public class Item {
         }
     }
 
+    public void increasePrice(Double price) {
+        this.price += price;
+        isPromotion = false;
+        promotionText = "";
+        promotionBeginDate = null;
+    }
+
     public boolean priceIsChangedLessThan30DaysAgo() {
         if (lastPriceChangeDate != null) {
             LocalDate now = LocalDate.now();

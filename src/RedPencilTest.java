@@ -283,14 +283,14 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = 1.20;
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
-        Assert.assertEquals(true, item.getPromotion());
 
         //Act
         item.increasePrice(.02);
 
         //Assert
         Assert.assertEquals(false, item.getPromotion());
-        Assert.assertEquals("Coat (promotion)", item.toString());
+        Assert.assertEquals("Coat", item.toString());
+        Assert.assertEquals(3.82, item.getPrice(), 0);
     }
 
 }
