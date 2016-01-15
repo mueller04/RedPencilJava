@@ -12,11 +12,11 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.beginPromotion();
+        item.reducePrice(1.20);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
-        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals(null, item.promotion);
         Assert.assertEquals(5.00, item.getPrice(), 0);
     }
 
@@ -71,7 +71,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
-        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals(null, item.promotion);
         Assert.assertEquals(5.00, item.getPrice(), 0);
     }
 
@@ -85,7 +85,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
     }
 
     @Test
@@ -110,7 +110,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
     }
 
     @Test
@@ -123,7 +123,7 @@ public class RedPencilTest {
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
-        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals(null, item.promotion);
     }
 
     @Test
@@ -136,19 +136,24 @@ public class RedPencilTest {
         item.reducePrice(1);
 
         //Assert
-        Assert.assertEquals(expectedDate, item.getPromotionBeginDate());
+        Assert.assertEquals(expectedDate, item.promotion.getPromotionBeginDate());
     }
 
+    /* Now that I changed it so that no promotion object is created when a promotion doesn't happen, should this test
+    change to testing that no promotion object is created rather than specifically testing for the date and needing
+    to create a promotion object? */
     @Test
     public void whenNoPromotionTheDateIsNotRecorded(){
         //Arrange
         Item item = new Item("Coat", 5.00);
+        Promotion newPromotion = new Promotion();
+        item.promotion = newPromotion;
 
         //Act
         item.reducePrice(1.55);
 
         //Assert
-        Assert.assertEquals(null, item.getPromotionBeginDate());
+        Assert.assertEquals(null, item.promotion.getPromotionBeginDate());
     }
 
     @Test
@@ -159,12 +164,12 @@ public class RedPencilTest {
         LocalDate beginPromoDate = now.minusDays(31);
 
         //Act
-        item.reducePrice(1.55);
-        item.setBeginDateForTest(beginPromoDate);
+        item.reducePrice(1.20);
+        item.promotion.setBeginDateForTest(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
-        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals(false, item.promotion.getPromotion());
     }
 
     @Test
@@ -176,11 +181,11 @@ public class RedPencilTest {
 
         //Act
         item.reducePrice(1.20);
-        item.setBeginDateForTest(beginPromoDate);
+        item.promotion.setBeginDateForTest(beginPromoDate);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
     }
 
     @Test
@@ -198,26 +203,7 @@ public class RedPencilTest {
         //Assert
         Assert.assertEquals(3.8, item.getPrice(), 0);
         Assert.assertEquals("Coat", item.toString());
-        Assert.assertEquals(false, item.getPromotion());
-    }
-
-    @Test
-    public void whenPriceChangedWithin15DaysCannotUpdatePromoDate() {
-        //Arrange
-        Item item = new Item("Coat", 5.00);
-        LocalDate now = LocalDate.now();
-        LocalDate beginPromoDate = now.minusDays(30);
-        LocalDate lastPriceChangeDate = now.minusDays(15);
-
-        item.setBeginDateForTest(beginPromoDate);
-        item.setLastPriceChangeDate(lastPriceChangeDate);
-
-        //Act
-        item.reducePrice(1.20);
-
-        //Assert
-        Assert.assertEquals(beginPromoDate, item.getPromotionBeginDate());
-        Assert.assertEquals(3.8, item.getPrice(), 0);
+        Assert.assertEquals(null, item.promotion);
     }
 
     @Test
@@ -232,9 +218,9 @@ public class RedPencilTest {
         item.reducePrice(1.20);
 
         //Assert
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
         Assert.assertEquals(3.80, item.getPrice(), 0);
-        Assert.assertEquals(now, item.getPromotionBeginDate());
+        Assert.assertEquals(now, item.promotion.getPromotionBeginDate());
     }
 
     @Test
@@ -249,9 +235,9 @@ public class RedPencilTest {
         item.reducePrice(1.20);
 
         //Assert
-        Assert.assertEquals(true, item.getPromotion());
+        Assert.assertEquals(true, item.promotion.getPromotion());
         Assert.assertEquals(3.80, item.getPrice(), 0);
-        Assert.assertEquals(now, item.getPromotionBeginDate());
+        Assert.assertEquals(now, item.promotion.getPromotionBeginDate());
     }
 
    @Test
@@ -264,7 +250,7 @@ public class RedPencilTest {
 
        LocalDate now = LocalDate.now();
        LocalDate beginPromoDate = now.minusDays(15);;
-       item.setBeginDateForTest(beginPromoDate);
+       item.promotion.setBeginDateForTest(beginPromoDate);
        item.setLastPriceChangeDate(beginPromoDate);
 
        //Act
@@ -272,9 +258,9 @@ public class RedPencilTest {
        item.reducePrice(priceToReduceIsValidToBeginPromotion);
 
        //Assert
-       Assert.assertEquals(true, item.getPromotion());
+       Assert.assertEquals(true, item.promotion.getPromotion());
        Assert.assertEquals(3.55, item.getPrice(), 0);
-       Assert.assertEquals(beginPromoDate, item.getPromotionBeginDate());
+       Assert.assertEquals(beginPromoDate, item.promotion.getPromotionBeginDate());
    }
 
     @Test
@@ -288,9 +274,17 @@ public class RedPencilTest {
         item.increasePrice(.02);
 
         //Assert
-        Assert.assertEquals(false, item.getPromotion());
+        Assert.assertEquals(false, item.promotion.getPromotion());
         Assert.assertEquals("Coat", item.toString());
         Assert.assertEquals(3.82, item.getPrice(), 0);
     }
+
+
+
+
+
+
+    /*general questions - without a data store I feel this application is a weird state machine.  I can't think of how to "expire"
+    a promotion after 30 days other than to do so when a method is called actively so it checks the current date, in my case the tostring method.*/
 
 }

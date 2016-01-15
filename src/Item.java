@@ -3,12 +3,10 @@ import java.time.temporal.ChronoUnit;
 
 public class Item {
 
+    public Promotion promotion;
     public String itemText;
-    public String promotionText = "";
     public Double price;
-    public LocalDate promotionBeginDate;
     public LocalDate lastPriceChangeDate = null;
-    public boolean isPromotion = false;
 
     public Item(String itemText, double price) {
         this.itemText = itemText;
@@ -19,40 +17,29 @@ public class Item {
         return price;
     }
 
-    public LocalDate getPromotionBeginDate() {
-        return promotionBeginDate;
-    }
-
-    public boolean getPromotion() {
-        return isPromotion;
-    }
-
-    public void beginPromotion() {
-        promotionText = " (promotion)";
-        isPromotion = true;
-        promotionBeginDate = LocalDate.now();
-        lastPriceChangeDate = promotionBeginDate;
-    }
-
     public void reducePrice(double price) {
 
         if (price < this.price) {
             if (price >= (this.price * 0.05) && (price <= this.price * 0.3)) {
                 if (!priceIsChangedLessThan30DaysAgo()) {
-                        this.beginPromotion();
+                    promotion = new Promotion();
+                        promotion.beginPromotion();
                 }
-
             }
             this.price -= price;
-            lastPriceChangeDate = promotionBeginDate;
+            LocalDate now = LocalDate.now();
+            lastPriceChangeDate = now;
         }
     }
 
     public void increasePrice(Double price) {
         this.price += price;
-        isPromotion = false;
-        promotionText = "";
-        promotionBeginDate = null;
+        LocalDate now = LocalDate.now();
+        lastPriceChangeDate = now;
+
+        if (promotion != null) {
+            promotion.endPromotion();
+        }
     }
 
     public boolean priceIsChangedLessThan30DaysAgo() {
@@ -69,22 +56,17 @@ public class Item {
 
     @Override
     public String toString(){
-        LocalDate now = LocalDate.now();
-
-        if (promotionBeginDate != null) {
-            if (ChronoUnit.DAYS.between(promotionBeginDate, now) > 30) {
-                isPromotion = false;
-                promotionText = "";
-            }
+        if (promotion != null) {
+                promotion.expirePromotionIfAged();
         }
-        return itemText + promotionText;
+        if (promotion != null) {
+            return itemText + promotion.promotionText;
+        } else {
+            return itemText;
+        }
     }
 
     //Test Methods
-    public void setBeginDateForTest(LocalDate testBeginDate) {
-        this.promotionBeginDate = testBeginDate;
-    }
-
     public void setLastPriceChangeDate(LocalDate testLastPriceChangeDate) {
         this.lastPriceChangeDate = testLastPriceChangeDate;
     }
