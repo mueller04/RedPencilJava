@@ -40,6 +40,7 @@ public class Item {
         this.price += price;
         LocalDate now = LocalDate.now();
         lastPriceChangeDate = now;
+
         Promotion.expirePromotion(promotion);
     }
 

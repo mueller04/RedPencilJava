@@ -249,7 +249,7 @@ public class RedPencilTest {
        item.reducePrice(priceToReduceIsValidToBeginPromotion);
 
        LocalDate now = LocalDate.now();
-       LocalDate beginPromoDate = now.minusDays(15);;
+       LocalDate beginPromoDate = now.minusDays(15);
        item.promotion.setBeginDateForTest(beginPromoDate);
        item.setLastPriceChangeDate(beginPromoDate);
 
@@ -287,8 +287,6 @@ public class RedPencilTest {
 
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
 
-        Assert.assertEquals(true, item.promotion.getPromotion());
-
         //Act
         Double priceToReduceIsGreaterThan30Percent = 1.18;
         item.reducePrice(priceToReduceIsGreaterThan30Percent);
@@ -299,12 +297,37 @@ public class RedPencilTest {
         Assert.assertEquals("Coat", item.toString());
     }
 
+    @Test
+    public void ifPriceisReduced30OrMoreDaysAfterLastPriceChangeAndLastPriceChangeBeginDateIntersectsWithLastPromotionEndDateNoNewPromotionBegins() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        Double priceToReduceIsValidToBeginPromotion = 1.20;
+        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        Assert.assertEquals(true, item.promotion.getPromotion());
 
+
+        LocalDate now = LocalDate.now();
+        LocalDate beginPromoDate = now.minusDays(45);
+        LocalDate testPriceChangeDate = now.minusDays(31);
+        item.promotion.setBeginDateForTest(beginPromoDate);
+        item.setLastPriceChangeDate(testPriceChangeDate);
+
+
+        Assert.assertEquals(true, item.promotion.getPromotion());
+
+        priceToReduceIsValidToBeginPromotion = .25;
+
+        //Act
+        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+
+        //Assert
+        Assert.assertEquals(3.55, item.getPrice(), 0);
+        Assert.assertEquals(false, item.promotion.getPromotion());
+        Assert.assertEquals("Coat", item.toString());
+    }
 
     /*general questions - without a data store I feel this application is a weird state machine.  I can't think of how to "expire"
     a promotion after 30 days other than to do so when a method is called actively so it checks the current date, in my case the toString method.
-
-    should the expirePromotion be changed to a static method just so that you call it like Promotion.expirepromotion(promotion) ?
 
     */
 
