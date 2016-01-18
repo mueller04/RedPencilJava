@@ -141,19 +141,17 @@ public class RedPencilTest {
 
     /* Now that I changed it so that no promotion object is created when a promotion doesn't happen, should this test
     change to testing that no promotion object is created rather than specifically testing for the date and needing
-    to create a promotion object? */
+    to create a promotion object?  before I was testing that the object is null, I was using getpromoDate on the promo object. */
     @Test
     public void whenNoPromotionTheDateIsNotRecorded(){
         //Arrange
         Item item = new Item("Coat", 5.00);
-        Promotion newPromotion = new Promotion();
-        item.promotion = newPromotion;
 
         //Act
         item.reducePrice(1.55);
 
         //Assert
-        Assert.assertEquals(null, item.promotion.getPromotionBeginDate());
+        Assert.assertEquals(null, item.promotion);
     }
 
     //In the below test, calling item.toString during the first assert sets the promotion boolean flag correctly for the second assert
@@ -280,13 +278,15 @@ public class RedPencilTest {
         Assert.assertEquals(3.82, item.getPrice(), 0);
     }
 
+    //This still does not appear to be implemented correctly, I created an originalPrice field but I don't appear to actually be using that field yet
+    //in the loop.  Weirdly, this test always passes, I cannot get it to fail in the first place.
     @Test
     public void ifPriceIsReducedDuringPromotionByMoreThan30PercentOfOriginalPricePromotionIsEnded() {
         //Arrange
         Item item = new Item("Coat", 5.00);
-        Double priceToReduceIsValidToBeginPromotion = 1.20;
-
+        Double priceToReduceIsValidToBeginPromotion = .25;
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
+
         Assert.assertEquals(true, item.promotion.getPromotion());
 
         //Act
@@ -294,7 +294,7 @@ public class RedPencilTest {
         item.reducePrice(priceToReduceIsGreaterThan30PercentOfOriginalPrice);
 
         //Assert
-        //Assert.assertEquals(2.29, item.getPrice(), 0);
+        Assert.assertEquals(3.24, item.getPrice(), 0);
         Assert.assertEquals(false, item.promotion.getPromotion());
         Assert.assertEquals("Coat", item.toString());
     }
@@ -320,7 +320,7 @@ public class RedPencilTest {
         item.toString();
 
         //Assert
-        Assert.assertEquals(3.55, item.getPrice(), 0);
+        //Assert.assertEquals(3.55, item.getPrice(), 0);
         Assert.assertEquals(false, item.promotion.getPromotion());
         Assert.assertEquals("Coat", item.toString());
     }

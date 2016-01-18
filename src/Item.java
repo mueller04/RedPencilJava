@@ -18,33 +18,37 @@ public class Item {
         return price;
     }
 
-    public void reducePrice(double price) {
+    public void reducePrice(double priceToReduce) {
 
-        if (price < this.price) {
-            if (price >= (this.price * 0.05) && (price <= this.price * 0.3))
+        if (priceToReduce < this.price) {
+            if (priceToReduce >= (this.price * 0.05) && (priceToReduce <= this.price * 0.3)) {
                 if (promotion != null && lastPriceChangeDate != null) {
                     if (!(ChronoUnit.DAYS.between((promotion.getPromotionBeginDate()), lastPriceChangeDate) < 30)) {
 
-                            if (!priceIsChangedLessThan30DaysAgo()) {
-                                promotion = new Promotion();
-                                originalPrice = price;
-                            }
+                        if (!priceIsChangedLessThan30DaysAgo()) {
+                            promotion = new Promotion();
+                            originalPrice = this.price;
+                        }
                     }
-                } else
-                {
+                } else {
                     if (!priceIsChangedLessThan30DaysAgo()) {
                         promotion = new Promotion();
-                        originalPrice = price;
+                        originalPrice = this.price;
                     }
                 }
-
-            if (price > this.price * 0.3) {
-                if (promotion != null) {
-                    promotion.expirePromotion();
-                }
-                originalPrice = null;
             }
-            this.price -= price;
+
+            if (originalPrice != null) {
+                if (priceToReduce > originalPrice * 0.3) {
+                    if (promotion != null) {
+                        promotion.expirePromotion();
+                    }
+                    originalPrice = null;
+                }
+            }
+
+
+            this.price -= priceToReduce;
             LocalDate now = LocalDate.now();
             lastPriceChangeDate = now;
         }
