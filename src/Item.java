@@ -20,12 +20,22 @@ public class Item {
     public void reducePrice(double price) {
 
         if (price < this.price) {
-            if (price >= (this.price * 0.05) && (price <= this.price * 0.3)) {
-                if (!priceIsChangedLessThan30DaysAgo()) {
-                    promotion = new Promotion();
+            if (price >= (this.price * 0.05) && (price <= this.price * 0.3))
+                if (promotion != null && lastPriceChangeDate != null) {
+                    if (!(ChronoUnit.DAYS.between((promotion.getPromotionBeginDate()), lastPriceChangeDate) < 30)) {
+
+                            if (!priceIsChangedLessThan30DaysAgo()) {
+                                promotion = new Promotion();
+                                promotion.beginPromotion();
+                            }
+                    }
+                } else
+                {
+                    if (!priceIsChangedLessThan30DaysAgo()) {
+                        promotion = new Promotion();
                         promotion.beginPromotion();
+                    }
                 }
-            }
 
             if (price > this.price * 0.3) {
                 Promotion.expirePromotion(promotion);

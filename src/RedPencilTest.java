@@ -156,6 +156,7 @@ public class RedPencilTest {
         Assert.assertEquals(null, item.promotion.getPromotionBeginDate());
     }
 
+    //In the below test, calling item.toString during the first assert sets the promotion boolean flag correctly for the second assert
     @Test
     public void whenPromotionDateIs31DaysOldNoPromotionText() {
         //Arrange
@@ -305,20 +306,17 @@ public class RedPencilTest {
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
         Assert.assertEquals(true, item.promotion.getPromotion());
 
-
         LocalDate now = LocalDate.now();
         LocalDate beginPromoDate = now.minusDays(45);
-        LocalDate testPriceChangeDate = now.minusDays(31);
+        LocalDate testPriceChangeDate = now.minusDays(30);
         item.promotion.setBeginDateForTest(beginPromoDate);
         item.setLastPriceChangeDate(testPriceChangeDate);
-
-
-        Assert.assertEquals(true, item.promotion.getPromotion());
 
         priceToReduceIsValidToBeginPromotion = .25;
 
         //Act
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.toString();
 
         //Assert
         Assert.assertEquals(3.55, item.getPrice(), 0);
@@ -329,6 +327,35 @@ public class RedPencilTest {
     /*general questions - without a data store I feel this application is a weird state machine.  I can't think of how to "expire"
     a promotion after 30 days other than to do so when a method is called actively so it checks the current date, in my case the toString method.
 
+    This issue really shows in my last test above where I have to call toString in my Act in order to update the state for my assert
+    against the promotion boolean.  I technically can have logic tied to commonly used methods like "reducePrice" so that always updates the state
+    but that also seems wonky.
     */
+
+    @Test
+    public void ifPriceisReduced30OrMoreDaysAfterLastPriceChangeAndLastPriceChangeBeginDateDoesNotIntersectsWithLastPromotionEndDateANewPromotionBegins() {
+        //Arrange
+        Item item = new Item("Coat", 5.00);
+        Double priceToReduceIsValidToBeginPromotion = 1.20;
+        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        Assert.assertEquals(true, item.promotion.getPromotion());
+
+        LocalDate now = LocalDate.now();
+        LocalDate beginPromoDate = now.minusDays(80);
+        LocalDate testPriceChangeDate = now.minusDays(30);
+        item.promotion.setBeginDateForTest(beginPromoDate);
+        item.setLastPriceChangeDate(testPriceChangeDate);
+
+        priceToReduceIsValidToBeginPromotion = .25;
+
+        //Act
+        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.toString();
+
+        //Assert
+        Assert.assertEquals(3.55, item.getPrice(), 0);
+        Assert.assertEquals(true, item.promotion.getPromotion());
+        Assert.assertEquals("Coat (promotion)", item.toString());
+    }
 
 }
