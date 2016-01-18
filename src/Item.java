@@ -23,11 +23,12 @@ public class Item {
         if (priceToReduce < this.price) {
             if (priceToReduce >= (this.price * 0.05) && (priceToReduce <= this.price * 0.3)) {
                 if (promotion != null && lastPriceChangeDate != null) {
-                    if (!(ChronoUnit.DAYS.between((promotion.getPromotionBeginDate()), lastPriceChangeDate) < 30)) {
-
+                    if ((ChronoUnit.DAYS.between((promotion.getPromotionBeginDate()), lastPriceChangeDate) > 30)) {
                         if (!priceIsChangedLessThan30DaysAgo()) {
                             promotion = new Promotion();
                             originalPrice = this.price;
+                        } else {
+                            //no new promotion
                         }
                     }
                 } else {
@@ -46,7 +47,6 @@ public class Item {
                     originalPrice = null;
                 }
             }
-
 
             this.price -= priceToReduce;
             LocalDate now = LocalDate.now();
