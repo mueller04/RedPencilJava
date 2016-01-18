@@ -27,7 +27,6 @@ public class Item {
 
                             if (!priceIsChangedLessThan30DaysAgo()) {
                                 promotion = new Promotion();
-                                promotion.beginPromotion();
                                 originalPrice = price;
                             }
                     }
@@ -35,13 +34,14 @@ public class Item {
                 {
                     if (!priceIsChangedLessThan30DaysAgo()) {
                         promotion = new Promotion();
-                        promotion.beginPromotion();
                         originalPrice = price;
                     }
                 }
 
             if (price > this.price * 0.3) {
-                Promotion.expirePromotion(promotion);
+                if (promotion != null) {
+                    promotion.expirePromotion();
+                }
                 originalPrice = null;
             }
             this.price -= price;
@@ -54,8 +54,9 @@ public class Item {
         this.price += price;
         LocalDate now = LocalDate.now();
         lastPriceChangeDate = now;
-
-        Promotion.expirePromotion(promotion);
+        if (promotion != null) {
+            promotion.expirePromotion();
+        }
         originalPrice = null;
     }
 
@@ -70,6 +71,8 @@ public class Item {
         }
         return false;
     }
+
+
 
     @Override
     public String toString(){
