@@ -6,6 +6,7 @@ public class Item {
     public Promotion promotion;
     public String itemText;
     public Double price;
+    public Double originalPrice;
     public LocalDate lastPriceChangeDate = null;
 
     public Item(String itemText, double price) {
@@ -27,6 +28,7 @@ public class Item {
                             if (!priceIsChangedLessThan30DaysAgo()) {
                                 promotion = new Promotion();
                                 promotion.beginPromotion();
+                                originalPrice = price;
                             }
                     }
                 } else
@@ -34,11 +36,13 @@ public class Item {
                     if (!priceIsChangedLessThan30DaysAgo()) {
                         promotion = new Promotion();
                         promotion.beginPromotion();
+                        originalPrice = price;
                     }
                 }
 
             if (price > this.price * 0.3) {
                 Promotion.expirePromotion(promotion);
+                originalPrice = null;
             }
             this.price -= price;
             LocalDate now = LocalDate.now();
@@ -52,6 +56,7 @@ public class Item {
         lastPriceChangeDate = now;
 
         Promotion.expirePromotion(promotion);
+        originalPrice = null;
     }
 
     public boolean priceIsChangedLessThan30DaysAgo() {

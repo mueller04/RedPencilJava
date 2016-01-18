@@ -281,19 +281,20 @@ public class RedPencilTest {
     }
 
     @Test
-    public void ifPriceIsReducedDuringPromotionByMoreThan30PercentPromotionIsEnded() {
+    public void ifPriceIsReducedDuringPromotionByMoreThan30PercentOfOriginalPricePromotionIsEnded() {
         //Arrange
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = 1.20;
 
         item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        Assert.assertEquals(true, item.promotion.getPromotion());
 
         //Act
-        Double priceToReduceIsGreaterThan30Percent = 1.18;
-        item.reducePrice(priceToReduceIsGreaterThan30Percent);
+        Double priceToReduceIsGreaterThan30PercentOfOriginalPrice = 1.51;
+        item.reducePrice(priceToReduceIsGreaterThan30PercentOfOriginalPrice);
 
         //Assert
-        Assert.assertEquals(2.62, item.getPrice(), 0);
+        //Assert.assertEquals(2.29, item.getPrice(), 0);
         Assert.assertEquals(false, item.promotion.getPromotion());
         Assert.assertEquals("Coat", item.toString());
     }
