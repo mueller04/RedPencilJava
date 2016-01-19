@@ -360,3 +360,6 @@ public class RedPencilTest {
     }
 
 }
+
+//for the reducePrice method, i refactored for "clarity".  One of the nested if's is confusing, I added an "else" that does nothing
+//except provide a comment for clarity.  I've seen this done in code before.  Is this a good practice?
