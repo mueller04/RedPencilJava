@@ -49,15 +49,13 @@ public class Item {
             }
 
             this.price -= priceToReduce;
-            LocalDate now = LocalDate.now();
-            lastPriceChangeDate = now;
+            lastPriceChangeDate = LocalDate.now();
         }
     }
 
     public void increasePrice(Double price) {
         this.price += price;
-        LocalDate now = LocalDate.now();
-        lastPriceChangeDate = now;
+        lastPriceChangeDate = LocalDate.now();
         if (promotion != null) {
             promotion.expirePromotion();
         }

@@ -16,15 +16,21 @@ public class Program {
         System.out.println("Enter discount amount");
         Double discountAmount = a.nextDouble();
 
-        Item item = new Item(name, price);
-        item.reducePrice(discountAmount);
+        if (name != null && price != null) {
+            Item item = new Item(name, price);
+            item.reducePrice(discountAmount);
 
-        System.out.println(item.toString());
-        System.out.println("Price: " + item.getPrice());
+            System.out.println(item.toString());
+            System.out.println("Price: " + item.getPrice());
 
-        if (item.promotion != null) {
-            System.out.println(item.promotion.isPromotion);
+            if (item.promotion != null) {
+                System.out.println(item.promotion.isPromotion);
+            }
+        } else {
+            System.out.println("provide a name and price");
         }
+
+
     }
 
 
