@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -8,6 +9,8 @@ public class Item {
     public Double price;
     public Double originalPrice;
     public LocalDate lastPriceChangeDate = null;
+
+
 
     public Item(String itemText, double price) {
         this.itemText = itemText;
@@ -52,6 +55,16 @@ public class Item {
             lastPriceChangeDate = LocalDate.now();
         }
     }
+
+
+
+    //refactored methods
+
+
+
+
+    //end refactored methods
+
 
     public void increasePrice(Double price) {
         this.price += price;
