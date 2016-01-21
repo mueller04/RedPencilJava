@@ -26,12 +26,12 @@ public class PromotionCreator {
     }
 
 
-    public boolean priceToReduceIsWithinAllowableRange (double priceToReduce) {
+    private boolean priceToReduceIsWithinAllowableRange (double priceToReduce) {
         return (priceToReduce >= (item.price * 0.05) && (priceToReduce <= item.price * 0.3));
     }
 
 
-    public boolean promotionDateandPriceDatesWithinAllowableRanges() {
+    private boolean promotionDateandPriceDatesWithinAllowableRanges() {
         if (item.promotion != null && item.lastPriceChangeDate != null) {
             if ((ChronoUnit.DAYS.between((item.promotion.getPromotionBeginDate()), item.lastPriceChangeDate) > 30)) {
 
@@ -43,7 +43,7 @@ public class PromotionCreator {
         return true;
     }
 
-    public boolean beginPromotionIfPriceIsChangedMoreThan30DaysAgo() {
+    private boolean beginPromotionIfPriceIsChangedMoreThan30DaysAgo() {
         if (item.lastPriceChangeDate != null) {
             LocalDate now = LocalDate.now();
             if (ChronoUnit.DAYS.between(item.lastPriceChangeDate, now) < 30) {
@@ -58,7 +58,7 @@ public class PromotionCreator {
     }
 
 
-    public void beginNewPromotion() {
+    private void beginNewPromotion() {
         item.promotion = new Promotion();
         item.originalPrice = item.price;
     }

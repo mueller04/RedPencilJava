@@ -10,6 +10,7 @@ public class Item {
     public LocalDate lastPriceChangeDate = null;
     public PromotionCreator promotionCreator;
 
+    //should promotion creator be initialized in attemptPriceReduction?
     public Item(String itemText, double price) {
         this.itemText = itemText;
         this.price = price;
@@ -32,7 +33,7 @@ public class Item {
     }
 
 
-    public void subtractPrice(double priceToReduce) {
+    private void subtractPrice(double priceToReduce) {
 
             if (originalPrice != null) {
                 if (priceToReduce > originalPrice * 0.3) {
