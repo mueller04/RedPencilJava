@@ -12,7 +12,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -25,7 +25,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(0.24);
+        item.attemptPriceReduction(0.24);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -38,7 +38,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(0.25);
+        item.attemptPriceReduction(0.25);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -52,7 +52,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(5.01);
+        item.attemptPriceReduction(5.01);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -67,7 +67,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(5.00);
+        item.attemptPriceReduction(5.00);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -81,7 +81,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(0.26);
+        item.attemptPriceReduction(0.26);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -94,7 +94,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(0.26);
+        item.attemptPriceReduction(0.26);
 
         //Assert
         Assert.assertEquals(4.74, item.getPrice(), 0);
@@ -106,7 +106,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(1.50);
+        item.attemptPriceReduction(1.50);
 
         //Assert
         Assert.assertEquals("Coat (promotion)", item.toString());
@@ -119,7 +119,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(1.55);
+        item.attemptPriceReduction(1.55);
 
         //Assert
         Assert.assertEquals("Coat", item.toString());
@@ -133,7 +133,7 @@ public class RedPencilTest {
         LocalDate expectedDate = LocalDate.now();
 
         //Act
-        item.reducePrice(1);
+        item.attemptPriceReduction(1);
 
         //Assert
         Assert.assertEquals(expectedDate, item.promotion.getPromotionBeginDate());
@@ -148,7 +148,7 @@ public class RedPencilTest {
         Item item = new Item("Coat", 5.00);
 
         //Act
-        item.reducePrice(1.55);
+        item.attemptPriceReduction(1.55);
 
         //Assert
         Assert.assertEquals(null, item.promotion);
@@ -163,7 +163,7 @@ public class RedPencilTest {
         LocalDate beginPromoDate = now.minusDays(31);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
         item.promotion.setBeginDateForTest(beginPromoDate);
 
         //Assert
@@ -179,7 +179,7 @@ public class RedPencilTest {
         LocalDate beginPromoDate = now.minusDays(30);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
         item.promotion.setBeginDateForTest(beginPromoDate);
 
         //Assert
@@ -197,7 +197,7 @@ public class RedPencilTest {
         item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
 
         //Assert
         Assert.assertEquals(3.8, item.getPrice(), 0);
@@ -214,7 +214,7 @@ public class RedPencilTest {
         item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
 
         //Assert
         Assert.assertEquals(true, item.promotion.getPromotion());
@@ -231,7 +231,7 @@ public class RedPencilTest {
         item.setLastPriceChangeDate(lastPriceChangeDate);
 
         //Act
-        item.reducePrice(1.20);
+        item.attemptPriceReduction(1.20);
 
         //Assert
         Assert.assertEquals(true, item.promotion.getPromotion());
@@ -245,7 +245,7 @@ public class RedPencilTest {
        Item item = new Item("Coat", 5.00);
        Double priceToReduceIsValidToBeginPromotion = 1.20;
 
-       item.reducePrice(priceToReduceIsValidToBeginPromotion);
+       item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
 
        LocalDate now = LocalDate.now();
        LocalDate beginPromoDate = now.minusDays(15);
@@ -254,7 +254,7 @@ public class RedPencilTest {
 
        //Act
        priceToReduceIsValidToBeginPromotion = .25;
-       item.reducePrice(priceToReduceIsValidToBeginPromotion);
+       item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
 
        //Assert
        Assert.assertEquals(true, item.promotion.getPromotion());
@@ -267,7 +267,7 @@ public class RedPencilTest {
         //Arrange
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = 1.20;
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
 
         //Act
         item.increasePrice(.02);
@@ -285,13 +285,13 @@ public class RedPencilTest {
         //Arrange
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = .25;
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
 
         Assert.assertEquals(true, item.promotion.getPromotion());
 
         //Act
         Double priceToReduceIsGreaterThan30PercentOfOriginalPrice = 1.51;
-        item.reducePrice(priceToReduceIsGreaterThan30PercentOfOriginalPrice);
+        item.attemptPriceReduction(priceToReduceIsGreaterThan30PercentOfOriginalPrice);
 
         //Assert
         Assert.assertEquals(3.24, item.getPrice(), 0);
@@ -304,7 +304,7 @@ public class RedPencilTest {
         //Arrange
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = 1.20;
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
         Assert.assertEquals(true, item.promotion.getPromotion());
 
         LocalDate now = LocalDate.now();
@@ -316,7 +316,7 @@ public class RedPencilTest {
         priceToReduceIsValidToBeginPromotion = .25;
 
         //Act
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
         item.toString();
 
         //Assert
@@ -338,7 +338,7 @@ public class RedPencilTest {
         //Arrange
         Item item = new Item("Coat", 5.00);
         Double priceToReduceIsValidToBeginPromotion = 1.20;
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
         Assert.assertEquals(true, item.promotion.getPromotion());
 
         LocalDate now = LocalDate.now();
@@ -350,7 +350,7 @@ public class RedPencilTest {
         priceToReduceIsValidToBeginPromotion = .25;
 
         //Act
-        item.reducePrice(priceToReduceIsValidToBeginPromotion);
+        item.attemptPriceReduction(priceToReduceIsValidToBeginPromotion);
         item.toString();
 
         //Assert

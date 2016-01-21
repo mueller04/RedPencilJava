@@ -18,7 +18,7 @@ public class Program {
 
         if (name != null && price != null) {
             Item item = new Item(name, price);
-            item.reducePrice(discountAmount);
+            item.attemptPriceReduction(discountAmount);
 
             System.out.println(item.toString());
             System.out.println("Price: " + item.getPrice());

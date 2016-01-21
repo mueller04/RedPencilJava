@@ -8,36 +8,31 @@ public class Item {
     public Double price;
     public Double originalPrice;
     public LocalDate lastPriceChangeDate = null;
+    public PromotionCreator promotionCreator;
 
     public Item(String itemText, double price) {
         this.itemText = itemText;
         this.price = price;
+        promotionCreator = new PromotionCreator(this);
     }
 
     public Double getPrice() {
         return price;
     }
 
-    public void reducePrice(double priceToReduce) {
 
-        if (priceToReduce < this.price) {
-            if (priceToReduce >= (this.price * 0.05) && (priceToReduce <= this.price * 0.3)) {
-                if (promotion != null && lastPriceChangeDate != null) {
-                    if ((ChronoUnit.DAYS.between((promotion.getPromotionBeginDate()), lastPriceChangeDate) > 30)) {
-                        if (!priceIsChangedLessThan30DaysAgo()) {
-                            promotion = new Promotion();
-                            originalPrice = this.price;
-                        } else {
-                            //no new promotion
-                        }
-                    }
-                } else {
-                    if (!priceIsChangedLessThan30DaysAgo()) {
-                        promotion = new Promotion();
-                        originalPrice = this.price;
-                    }
-                }
-            }
+    public boolean attemptPriceReduction(double priceToReduce) {
+
+        if (priceToReduce >= this.price) {
+            return false;
+        }
+        promotionCreator.attemptToBeginPromotion(priceToReduce);
+        subtractPrice(priceToReduce);
+        return true;
+    }
+
+
+    public void subtractPrice(double priceToReduce) {
 
             if (originalPrice != null) {
                 if (priceToReduce > originalPrice * 0.3) {
@@ -47,11 +42,10 @@ public class Item {
                     originalPrice = null;
                 }
             }
-
             this.price -= priceToReduce;
             lastPriceChangeDate = LocalDate.now();
         }
-    }
+
 
     public void increasePrice(Double price) {
         this.price += price;
@@ -60,18 +54,6 @@ public class Item {
             promotion.expirePromotion();
         }
         originalPrice = null;
-    }
-
-    public boolean priceIsChangedLessThan30DaysAgo() {
-        if (lastPriceChangeDate != null) {
-            LocalDate now = LocalDate.now();
-            if (ChronoUnit.DAYS.between(lastPriceChangeDate, now) < 30) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        return false;
     }
 
 
