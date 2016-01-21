@@ -30,7 +30,7 @@ public class PromotionEvaluator {
             } catch (InvocationTargetException ite) {
 
             }
-            
+
         }
     }
 
