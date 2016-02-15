@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 public class Item {
 
@@ -8,13 +7,13 @@ public class Item {
     public Double price;
     public Double originalPrice;
     public LocalDate lastPriceChangeDate = null;
-    public PromotionCreator promotionCreator;
+    public PromotionManager promotionCreator;
 
     //should promotion creator be initialized in attemptPriceReduction?
     public Item(String itemText, double price) {
         this.itemText = itemText;
         this.price = price;
-        promotionCreator = new PromotionCreator(this);
+        promotionCreator = new PromotionManager(this);
     }
 
     public Double getPrice() {

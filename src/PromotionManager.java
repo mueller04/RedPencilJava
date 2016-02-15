@@ -1,24 +1,20 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class PromotionCreator {
+public class PromotionManager {
 
     Item item;
 
-    public PromotionCreator(Item item) {
+    public PromotionManager(Item item) {
         this.item = item;
     }
 
     //the returned flag doesn't do anything, I use it to control the exiting of the method.
     public boolean attemptToBeginPromotion(double priceToReduce) {
-        boolean returnFlag = true;
+        boolean returnFlag = false;
 
-        if (!priceToReduceIsWithinAllowableRange(priceToReduce)) {
-            return false;
-        }
-
-        if (!priceToReduceIsWithinAllowableRange(priceToReduce)) {
-            return false;
+        if (priceToReduceIsWithinAllowableRange(priceToReduce)) {
+            return true;
         }
 
         returnFlag = promotionDateandPriceDatesWithinAllowableRanges();
